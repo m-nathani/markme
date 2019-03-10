@@ -1,0 +1,11 @@
+version: '3.1'
+services :
+  react-markme:
+    container_name: react-markme
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
