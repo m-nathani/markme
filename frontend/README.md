@@ -17,6 +17,11 @@ React application that shows a map and markers on it. A user should be able to v
   λ npm start
 ```
 
+## Docker
+```bash
+  λ docker-compose up --build
+```
+
 ## Structure
 ```bash
 .
@@ -42,4 +47,3 @@ React application that shows a map and markers on it. A user should be able to v
 - `npm start` - builds the redux app in development mode
 - `npm run lint` - lints all the files in `src/` folder
 - `npm run lint:fix` - fixes all the possible linting errors
-- `npm run serve` - serves the files in the `dist/` folder

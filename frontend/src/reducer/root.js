@@ -1,17 +1,11 @@
 import {
-  DEFAULT_LOCATION, FETCH_GEOCODER_DATA, FETCH_GEOCODER_DATA_SUCCESS, FETCH_GEOCODER_DATA_FAIL, DELETE_GEOCODER_DATA,
-  EDIT_GEOCODER_DATA, EDIT_GEOCODER_DATA_SUCCESS,
+  FETCH_GEOCODER_DATA, FETCH_GEOCODER_DATA_SUCCESS, FETCH_GEOCODER_DATA_FAIL, DELETE_GEOCODER_DATA,
+  EDIT_GEOCODER_DATA, EDIT_GEOCODER_DATA_SUCCESS, SET_GEOCODER_DATA,
 } from 'constant';
 
 const initialState = {
   initial: true,
-  data: [{
-    title: 'Berlin',
-    lat: DEFAULT_LOCATION.lat,
-    lng: DEFAULT_LOCATION.lng,
-    text: 'Berlin, Germany',
-    key: 'ChIJAVkDPzdOqEcRcDteW0YgIQQ',
-  }],
+  data: [],
   error: false,
   isLoading: false,
   isEdit: false,
@@ -42,6 +36,12 @@ const editGeocoderData = (state, action) => ({
   ...state, type: action.type, isEdit: action.data,
 });
 
+const setGeoderData = (state, action) => ({
+  ...state,
+  type: action.type,
+  data: [...action.data],
+});
+
 const editGeocoderDataSuccess = (state, action) => {
   const { newData, oldData } = action.data;
   return newData ? {
@@ -68,6 +68,7 @@ export default function root(state = initialState, action) {
     case DELETE_GEOCODER_DATA: return deleteGeocoderData(state, action);
     case EDIT_GEOCODER_DATA: return editGeocoderData(state, action);
     case EDIT_GEOCODER_DATA_SUCCESS: return editGeocoderDataSuccess(state, action);
+    case SET_GEOCODER_DATA: return setGeoderData(state, action);
     default:
       return state;
   }

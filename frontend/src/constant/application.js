@@ -3,4 +3,4 @@ export const DEFAULT_LOCATION = {
   lng: 13.404954,
 };
 
-export const DEFAULT_ZOOM = 8;
+export const DEFAULT_ZOOM = 3;

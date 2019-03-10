@@ -7,11 +7,19 @@ export default class MarkMeService extends HttpRequest {
     this.path = `${config.markMeHost}/${servicePath}`;
   }
 
-  create(data) {
+  listGeocode() {
+    return this.fetch(this.path, {});
+  }
+
+  createGeocode(data) {
     return this.create(this.path, data);
   }
 
-  update(data) {
-    return this.update(this.path, data);
+  updateGeocode(data, id) {
+    return this.update(`${this.path}/${id}`, data);
+  }
+
+  deleteGeocode(id) {
+    return this.remove(`${this.path}/${id}`);
   }
 }
