@@ -1,7 +1,5 @@
-# Mark Me
+# Mark Me Frontend
 React application that shows a map and markers on it. A user should be able to view, create, edit and delete this markers.
-All the changes should be immediately visible on the map. The second part is to actually build the
-backend API in Ruby for allowing these CRUD operations for markers.
 
 ## Pre-requisite
   node expected version: `"^6.14.0 || ^8.10.0 || >=9.10.0"`.
@@ -32,10 +30,10 @@ backend API in Ruby for allowing these CRUD operations for markers.
 │   ├── images          # folder with all images
 │   ├── middleware      # folder with all middlewares
 │   ├── reducer         # directory that contains all redux reducers
-│   └── service         # contains all the backend service logic
-│     ├── api             # contains structure to hit api calls
-│   └── store           # wraps store configuration for redux
 │   └── route           # contains all routes for redux app
+│   ├── service         # contains all the backend service logic
+│   │   ├── api         # contains structure to hit api calls
+│   └── store           # wraps store configuration for redux
 └── webpack             # contains all webpack configurations
 ```
 
