@@ -33,7 +33,7 @@ class Search extends React.Component {
                     content: isEdit ? 'Edit' : 'Add',
                     onClick: () => { actions.fetchGeocoderData(this.searchInput.inputRef.value); },
                     tabIndex: '1',
-                    color: 'blue',
+                    color: isEdit ? 'green' : 'blue',
                     inverted: true,
                     loading: isLoading,
                   }} />

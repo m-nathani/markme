@@ -5,24 +5,34 @@ const baseConfig = require('./base');
 const defaultSettings = require('./defaults');
 
 // Add needed plugins here
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 let config = Object.assign({}, baseConfig, {
+  mode: 'production',
   entry: [
-    'bootstrap-loader',
     defaultSettings.srcPath
   ],
+  performance: {
+    hints: false,
+  },
   cache: true,
   devtool: 'none',
+  optimization: {
+    minimizer: [
+      // we specify a custom UglifyJsPlugin here to get source maps in production
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: {
+            warnings: false,
+          },
+        },
+      })
+    ]
+  },
   plugins: [
     ...defaultSettings.getDefaultPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      cache: true,
-      parallel: true,
-    }),
     new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   // Add needed loaders to the defaults here

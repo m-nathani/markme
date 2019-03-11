@@ -33,6 +33,7 @@
     "react/jsx-uses-react": "warn",
     "react/jsx-uses-vars": "warn",
     "import/extensions": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "import/no-unresolved": "error"
   },
   "settings": {

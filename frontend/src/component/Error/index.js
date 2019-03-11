@@ -11,5 +11,8 @@ class Error extends Component {
     );
   }
 }
+Error.propType = {
+
+};
 
 export default Error;
