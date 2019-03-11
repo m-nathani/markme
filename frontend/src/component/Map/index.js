@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import config from 'config';
 import { apiIsLoaded } from 'service';
 import { DEFAULT_LOCATION, DEFAULT_ZOOM } from 'constant';
+import PropTypes from 'prop-types';
 import Marker from '../Marker';
 
 class Map extends Component {
@@ -63,6 +64,17 @@ class Map extends Component {
     if (mapApiLoaded) apiIsLoaded(mapInstance, mapApi, data);
   }
 }
+
+
+Map.propTypes = {
+  data: PropTypes.array,
+  zoom: PropTypes.number,
+  key: PropTypes.string,
+  center: PropTypes.shape({
+    lat: PropTypes.number,
+    lng: PropTypes.number,
+  }),
+};
 
 Map.defaultProps = {
   key: config.apiKey,

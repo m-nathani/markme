@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Input, Header, Icon, Segment,
 } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 class Search extends React.Component {
   constructor(props) {
@@ -42,5 +43,14 @@ class Search extends React.Component {
     );
   }
 }
+
+Search.propTypes = {
+  actions: PropTypes.object,
+  isLoading: PropTypes.bool,
+  isEdit: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
+};
 
 export default Search;

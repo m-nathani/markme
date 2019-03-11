@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import Item from '../Item';
 
 class PlaceList extends Component {
@@ -8,7 +9,7 @@ class PlaceList extends Component {
     this.generateList = this.generateList.bind(this);
   }
 
-  generateList(data, actions, isEdit) {
+  generateList(data = [], actions, isEdit) {
     return data.map(marker => (
       <Grid.Column key={marker.key}>
         <Item marker={marker} actions={actions} isEdit={isEdit} />
@@ -25,5 +26,14 @@ class PlaceList extends Component {
     );
   }
 }
+
+PlaceList.propTypes = {
+  isEdit: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
+  data: PropTypes.array,
+  actions: PropTypes.object,
+};
 
 export default PlaceList;

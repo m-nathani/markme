@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Card, Button, Icon,
 } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 class Item extends Component {
   render() {
@@ -34,5 +35,14 @@ class Item extends Component {
     );
   }
 }
+
+Item.propTypes = {
+  isEdit: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.object,
+  ]),
+  actions: PropTypes.object,
+  marker: PropTypes.object,
+};
 
 export default Item;

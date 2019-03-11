@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon, Popup } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 const Marker = props => (
   <div
@@ -13,5 +14,11 @@ const Marker = props => (
     />
   </div>
 );
+
+Marker.propTypes = {
+  text: PropTypes.string,
+  title: PropTypes.string,
+  key: PropTypes.string,
+};
 
 export default Marker;

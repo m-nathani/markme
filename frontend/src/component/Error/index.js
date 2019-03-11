@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Message, Transition } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 class Error extends Component {
   render() {
@@ -11,8 +12,10 @@ class Error extends Component {
     );
   }
 }
-Error.propType = {
 
+Error.propTypes = {
+  error: PropTypes.bool,
+  message: PropTypes.string,
 };
 
 export default Error;
