@@ -5,7 +5,8 @@ import {
 
 class Item extends Component {
   render() {
-    const { marker, actions } = this.props;
+    const { marker, actions, isEdit } = this.props;
+    const isEdited = isEdit && isEdit.id === marker.id;
     return (
       <Card fluid raised >
         <Card.Content>
@@ -23,7 +24,8 @@ class Item extends Component {
             <Button color='green' onClick={ () => actions.editGeocoderData(marker)} >
               Edit
             </Button>
-            <Button color='red' onClick={ () => actions.deleteGeocoderData(marker)} >
+            <Button disabled={!!isEdited } color={isEdited ? 'grey' : 'red'}
+                    onClick={ () => actions.deleteGeocoderData(marker)} >
               Delete
             </Button>
           </div>
