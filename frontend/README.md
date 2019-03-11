@@ -39,6 +39,7 @@ React application that shows a map and markers on it. A user should be able to v
 │   ├── service         # contains all the backend service logic
 │   │   ├── api         # contains structure to hit api calls
 │   └── store           # wraps store configuration for redux
+│   └── test            # test cases for source 
 └── webpack             # contains all webpack configurations
 ```
 

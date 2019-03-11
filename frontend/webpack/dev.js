@@ -23,23 +23,11 @@ let config = Object.assign({}, baseConfig, {
       cache: true,
       parallel: true,
     }),
-    new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin({
-      filename: '[name].[contenthash].css',
-    }),
   ],
   // Add needed loaders to the defaults here
   module: {
     rules: [
       ...defaultSettings.getDefaultModules(),
-      {
-        test: /\.(js|jsx)$/,
-        use: 'babel-loader',
-        include: [
-          defaultSettings.srcPath
-        ]
-      }
     ]
   }
 });

@@ -18,7 +18,21 @@ const webpack = require('webpack');
  */
 
 const getDefaultModules = () => {
-  return [{
+  return [
+    {
+      test: /\.(js|jsx)$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      },
+      include: [
+        srcPath
+      ]
+    },
+    {
       enforce: 'pre',
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
@@ -72,7 +86,12 @@ const envKeys = (env) => (Object.keys(env).reduce((prev, next) => {
 
 const getDefaultPlugin = () => {
   return  [
-    new webpack.DefinePlugin(envKeys(process.env))
+    new webpack.DefinePlugin(envKeys(process.env)),
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new ExtractTextPlugin({
+      filename: '[name].[contenthash].css',
+    }),
   ];
 }
 

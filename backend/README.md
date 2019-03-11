@@ -24,11 +24,3 @@ A user should be able to view, create, edit and delete this markers. This part i
   # run the project
   λ rails s
 ```
-
-
-## Docker
-```bash
-  λ rails db:create
-  λ rails db:seed
-  λ docker-compose up --build
-```

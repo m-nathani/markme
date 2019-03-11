@@ -6,13 +6,6 @@ import { DEFAULT_LOCATION, DEFAULT_ZOOM } from 'constant';
 import Marker from '../Marker';
 
 class Map extends Component {
-  static defaultProps = {
-    key: config.apiKey,
-    center: DEFAULT_LOCATION,
-    zoom: DEFAULT_ZOOM,
-    data: [],
-  };
-
   constructor(props) {
     super(props);
     this.renderMarker = this.renderMarker.bind(this);
@@ -24,24 +17,26 @@ class Map extends Component {
     };
   }
 
-  apiHasLoaded = (map, maps, places) => {
+  apiHasLoaded(map, maps, places) {
     this.setState({
       mapApiLoaded: true,
       mapInstance: map,
       mapApi: maps,
     });
     apiIsLoaded(map, maps, places);
-  };
+  }
 
-  renderMarker = marker => (
+  renderMarker(marker) {
+    return (
       <Marker
         lat={marker.lat}
         lng={marker.lng}
         text={marker.text}
         key={marker.key}
         title={marker.title}
-    />
-  )
+      />
+    );
+  }
 
   render() {
     const { data } = this.props;
@@ -68,5 +63,12 @@ class Map extends Component {
     if (mapApiLoaded) apiIsLoaded(mapInstance, mapApi, data);
   }
 }
+
+Map.defaultProps = {
+  key: config.apiKey,
+  center: DEFAULT_LOCATION,
+  zoom: DEFAULT_ZOOM,
+  data: [],
+};
 
 export default Map;
