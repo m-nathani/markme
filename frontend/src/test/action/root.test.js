@@ -12,6 +12,6 @@ describe('actions', () => {
       error: true,
       message: 'err',
     };
-    expect(actions.fetchGeocoderDataFail(data)).toEqual(expectedAction);
+    expect(actions.fetchGeocoderDataFail(data.message)).toEqual(expectedAction);
   });
 });
