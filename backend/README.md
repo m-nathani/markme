@@ -27,6 +27,10 @@ A user should be able to view, create, edit and delete this markers. This part i
 ```
 
 ## Dockerised
+
+### Pre-requisite
+  update `.env-docker` with appropiate env variables
+
 ```bash
   λ docker-compose up --build
 ```

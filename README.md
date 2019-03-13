@@ -6,5 +6,8 @@ React application that shows a map and markers on it. A user should be able to v
   # clone the repository
   λ git clone https://github.com/m-nathani/markme
   # change the current directory
-  λ cd markme/frontend or cd markme/backend
+  λ cd markme/frontend
+  λ docker-compose up --build
+  λ cd markme/backend
+  λ docker-compose up --build
 ```

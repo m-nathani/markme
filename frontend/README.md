@@ -2,8 +2,8 @@
 React application that shows a map and markers on it. A user should be able to view, create, edit and delete this markers.
 
 ## Pre-requisite
-  node expected version: `"^6.14.0 || ^8.10.0 || >=9.10.0"`.
-  rename .env-sample to .env with appropiate env variables
+  * node expected version: `"^6.14.0 || ^8.10.0 || >=9.10.0"`.
+  * rename `.env-sample` to `.env` with appropiate env variables
 
 ## Setup
 ```bash
@@ -17,7 +17,7 @@ React application that shows a map and markers on it. A user should be able to v
   λ npm start
 ```
 
-## Docker
+## Dockerised
 ```bash
   λ docker-compose up --build
 ```
