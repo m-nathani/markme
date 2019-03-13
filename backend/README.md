@@ -7,7 +7,7 @@ A user should be able to view, create, edit and delete this markers. This part i
   * Bundle version - 2.0.1
   * Mysql
   * Configuration
-      change .env.sample to .env for `database.yml with valid mysql credentials
+      change `.env.sample` to `.env` for `database.yml` with valid mysql credentials
 
 ## Setup
 ```bash
