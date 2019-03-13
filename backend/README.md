@@ -2,8 +2,9 @@
 A user should be able to view, create, edit and delete this markers. This part is to actually build the backend API in Ruby for allowing these CRUD operations for markers.
 
 ## Pre-requisite
-  * Ruby version - 2.5.1
+  * Ruby version - 2.5.3
   * Rails version - 5.2.2
+  * Bundle version - 2.0.1
   * Mysql
   * Configuration
       change .env.sample to .env for `database.yml with valid mysql credentials
@@ -23,4 +24,9 @@ A user should be able to view, create, edit and delete this markers. This part i
   λ rails db:seed
   # run the project
   λ rails s
+```
+
+## Dockerised
+```bash
+  λ docker-compose up --build
 ```
