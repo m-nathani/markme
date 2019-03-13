@@ -20,27 +20,28 @@ class Search extends React.Component {
     const { actions, isLoading, isEdit } = this.props;
     if (isEdit) this.setSearchText(isEdit.text);
     return (
-        <Segment raised placeholder>
-          <Header icon>
-            <Icon name='world' />
-              {SEARCH_HEADER_TEXT}
-          </Header>
-          <Segment.Inline>
-            <Input type='text' size="large" placeholder='Search places...'
-                  loading={isLoading}
-                  ref={(searchInput) => { this.searchInput = searchInput; }}
-                  onKeyPress={(e) => { if (e.key === 'Enter') actions.fetchGeocoderData(e.currentTarget.value); }}
-                  icon='search' iconPosition='left'
-                  action={{
-                    content: isEdit ? 'Edit' : 'Add',
-                    onClick: () => { actions.fetchGeocoderData(this.searchInput.inputRef.value); },
-                    tabIndex: '1',
-                    color: isEdit ? 'green' : 'blue',
-                    inverted: true,
-                    loading: isLoading,
-                  }} />
-          </Segment.Inline>
-        </Segment>
+      <Segment raised placeholder>
+        <Header icon>
+          <Icon name='world' />
+            {SEARCH_HEADER_TEXT}
+        </Header>
+        <Segment.Inline>
+          <Input type='text' size="large" placeholder='Search places...'
+            loading={isLoading}
+            ref={(searchInput) => { this.searchInput = searchInput; }}
+            onKeyPress={(e) => { if (e.key === 'Enter') actions.fetchGeocoderData(e.currentTarget.value); }}
+            icon='search' iconPosition='left'
+            action={{
+              content: isEdit ? 'Edit' : 'Add',
+              onClick: () => { actions.fetchGeocoderData(this.searchInput.inputRef.value); },
+              tabIndex: '1',
+              color: isEdit ? 'green' : 'blue',
+              inverted: true,
+              loading: isLoading,
+            }}
+          />
+        </Segment.Inline>
+      </Segment>
     );
   }
 }

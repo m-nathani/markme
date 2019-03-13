@@ -4,7 +4,9 @@ A user should be able to view, create, edit and delete this markers. This part i
 ## Pre-requisite
   * Ruby version - 2.5.3
   * Rails version - 5.2.2
+      `gem install rails -v '5.2.2'`
   * Bundle version - 2.0.1
+      `gem install bundler -v '2.0.1'`
   * Mysql
   * Configuration
       change `.env.sample` to `.env` for `database.yml` with valid mysql credentials
