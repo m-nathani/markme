@@ -32,7 +32,7 @@ React application that shows a map and markers on it. A user should be able to v
 │   ├── config          # contains configuration files for client-side
 │   ├── constant        # contains all constants, can be both server and client side
 │   ├── container       # wraps all redux containers
-│   ├── images          # folder with all images
+│   ├── image           # folder with all images
 │   ├── middleware      # folder with all middlewares
 │   ├── reducer         # directory that contains all redux reducers
 │   └── route           # contains all routes for redux app

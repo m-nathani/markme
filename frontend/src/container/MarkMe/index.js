@@ -18,7 +18,7 @@ class MarkMe extends Component {
     const { actions } = this.props;
     try {
       const response = await markMeService.listGeocode();
-      actions.setGeoderData(response.data);
+      actions.loadGeoderData(response.data);
     } catch (error) {
       console.log(error); // eslint-disable-line
     }

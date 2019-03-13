@@ -42,7 +42,7 @@ module.exports = {
       reducer: `${defaultSettings.srcPath}/reducer/`,
       styles: `${defaultSettings.srcPath}/styles/`,
       service: `${defaultSettings.srcPath}/service/`,
-      images: `${defaultSettings.srcPath}/images/`,
+      image: `${defaultSettings.srcPath}/image/`,
       config: `${defaultSettings.srcPath}/config/` + (process.env.REACT_WEBPACK_ENV || 'dev')
     }
   },
