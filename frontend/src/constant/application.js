@@ -3,4 +3,6 @@ export const DEFAULT_LOCATION = {
   lng: 13.404954,
 };
 
-export const DEFAULT_ZOOM = 3;
+export const DEFAULT_ZOOM = 8;
+export const GRID_COULUMS = 2;
+export const SEARCH_HEADER_TEXT = 'Search to mark me !';

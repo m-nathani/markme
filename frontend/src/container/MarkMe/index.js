@@ -34,7 +34,7 @@ class MarkMe extends Component {
       <Segment placeholder>
       <Grid divided columns={2} stackable textAlign='center'>
         <Grid.Row>
-          <Grid.Column style={{ height: '100%' }} >
+          <Grid.Column>
             <Maps { ...root } />
           </Grid.Column>
           <Grid.Column>

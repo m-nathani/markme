@@ -3,6 +3,7 @@ import {
   Input, Header, Icon, Segment,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { SEARCH_HEADER_TEXT } from 'constant';
 
 class Search extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Search extends React.Component {
         <Segment raised placeholder>
           <Header icon>
             <Icon name='world' />
-            Search to mark me !
+              {SEARCH_HEADER_TEXT}
           </Header>
           <Segment.Inline>
             <Input type='text' size="large" placeholder='Search places...'

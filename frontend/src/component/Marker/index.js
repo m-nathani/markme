@@ -7,7 +7,7 @@ const Marker = props => (
     alt={props.text}
   >
     <Popup
-      key={props.key}
+      placeKey={props.placeKey}
       trigger={ <Icon name='map pin' size="huge" color="red" /> }
       header={props.title}
       content={props.text}
@@ -18,7 +18,7 @@ const Marker = props => (
 Marker.propTypes = {
   text: PropTypes.string,
   title: PropTypes.string,
-  key: PropTypes.string,
+  placeKey: PropTypes.string,
 };
 
 export default Marker;

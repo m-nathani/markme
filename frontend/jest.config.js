@@ -6,7 +6,7 @@ module.exports = {
   rootDir: 'src',
   testRegex: '/src/test/.*\\.test\\.js$',
   setupFiles: ['<rootDir>/test/setup.js'],
-  "moduleNameMapper": {
+  moduleNameMapper: {
     "^action(.*)$": `<rootDir>/action$1`,
     "^app(.*)$": `<rootDir>/app$1`,
     "^constant(.*)$": `<rootDir>/constant$1`,

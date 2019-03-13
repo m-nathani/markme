@@ -30,10 +30,11 @@ class Map extends Component {
   renderMarker(marker) {
     return (
       <Marker
+        key={marker.key}
         lat={marker.lat}
         lng={marker.lng}
         text={marker.text}
-        key={marker.key}
+        placeKey={marker.key}
         title={marker.title}
       />
     );
@@ -44,7 +45,7 @@ class Map extends Component {
     return (
       <div style={{ height: '100%', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: this.props.key }}
+          bootstrapURLKeys={{ key: this.props.mapKey }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           yesIWantToUseGoogleMapApiInternals
@@ -69,7 +70,7 @@ class Map extends Component {
 Map.propTypes = {
   data: PropTypes.array,
   zoom: PropTypes.number,
-  key: PropTypes.string,
+  mapKey: PropTypes.string,
   center: PropTypes.shape({
     lat: PropTypes.number,
     lng: PropTypes.number,
@@ -77,7 +78,7 @@ Map.propTypes = {
 };
 
 Map.defaultProps = {
-  key: config.apiKey,
+  mapKey: config.apiKey,
   center: DEFAULT_LOCATION,
   zoom: DEFAULT_ZOOM,
   data: [],
