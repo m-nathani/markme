@@ -25,3 +25,8 @@ A user should be able to view, create, edit and delete this markers. This part i
   # run the project
   λ rails s
 ```
+
+## Dockerised
+```bash
+  λ docker-compose up --build
+```

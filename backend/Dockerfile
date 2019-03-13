@@ -5,8 +5,6 @@ RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
-RUN cat Gemfile.lock | grep -A 1 "BUNDLED WITH"
-RUN bundler --version
 RUN bundle install
 COPY . /myapp
 
