@@ -34,7 +34,8 @@
     "react/jsx-uses-vars": "warn",
     "import/extensions": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-    "import/no-unresolved": "error"
+    "import/no-unresolved": "error",
+    "linebreak-style": 0
   },
   "settings": {
     "import/resolver": {

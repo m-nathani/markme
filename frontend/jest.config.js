@@ -15,7 +15,7 @@ module.exports = {
     "^reducer(.*)$": `<rootDir>/reducer$1`,
     "^styles(.*)$": `<rootDir>/styles$1`,
     "^service(.*)$": `<rootDir>/service$1`,
-    "^images(.*)$": `<rootDir>/images$1`,
+    "^image(.*)$": `<rootDir>/image$1`,
     "^config(.*)$": `<rootDir>/config/` + (process.env.REACT_WEBPACK_ENV || 'dev') + '$1'
   }
 };

@@ -1,6 +1,6 @@
 import {
   FETCH_GEOCODER_DATA, FETCH_GEOCODER_DATA_SUCCESS, FETCH_GEOCODER_DATA_FAIL, DELETE_GEOCODER_DATA,
-  EDIT_GEOCODER_DATA, EDIT_GEOCODER_DATA_SUCCESS, SET_GEOCODER_DATA,
+  EDIT_GEOCODER_DATA, EDIT_GEOCODER_DATA_SUCCESS, LOAD_GEOCODER_DATA,
 } from 'constant';
 
 const initialState = {
@@ -23,7 +23,7 @@ const fetchGeocoderDataSuccess = (state, action) => ({
 });
 
 const fetchGeocoderDataFail = (state, action) => ({
-  ...state, ...action, isLoading: false,
+  ...state, ...action, isLoading: false, error: true,
 });
 
 const deleteGeocoderData = (state, action) => ({
@@ -36,7 +36,7 @@ const editGeocoderData = (state, action) => ({
   ...state, type: action.type, isEdit: action.data,
 });
 
-const setGeoderData = (state, action) => ({
+const loadGeoderData = (state, action) => ({
   ...state,
   type: action.type,
   data: [...action.data],
@@ -68,7 +68,7 @@ export default function root(state = initialState, action) {
     case DELETE_GEOCODER_DATA: return deleteGeocoderData(state, action);
     case EDIT_GEOCODER_DATA: return editGeocoderData(state, action);
     case EDIT_GEOCODER_DATA_SUCCESS: return editGeocoderDataSuccess(state, action);
-    case SET_GEOCODER_DATA: return setGeoderData(state, action);
+    case LOAD_GEOCODER_DATA: return loadGeoderData(state, action);
     default:
       return state;
   }

@@ -2,12 +2,11 @@ import markMeService from 'service/api';
 import { geodCoderService, checkDuplicatePlace } from 'service';
 import {
   FETCH_GEOCODER_DATA, FETCH_GEOCODER_DATA_SUCCESS, FETCH_GEOCODER_DATA_FAIL, DELETE_GEOCODER_DATA,
-  EDIT_GEOCODER_DATA, EDIT_GEOCODER_DATA_SUCCESS, SET_GEOCODER_DATA,
+  EDIT_GEOCODER_DATA, EDIT_GEOCODER_DATA_SUCCESS, LOAD_GEOCODER_DATA,
 } from 'constant';
 
 export const fetchGeocoderDataFail = err => ({
   type: FETCH_GEOCODER_DATA_FAIL,
-  error: true,
   message: err,
 });
 
@@ -63,7 +62,7 @@ export const editGeocoderData = place => ({
   data: place,
 });
 
-export const setGeoderData = data => ({
-  type: SET_GEOCODER_DATA,
+export const loadGeoderData = data => ({
+  type: LOAD_GEOCODER_DATA,
   data,
 });
